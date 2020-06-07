@@ -1,0 +1,13 @@
+.taskForm {
+    display: flex;
+    flex-direction: column;
+
+    .formButton {
+        background-color: #3F51B5;
+        margin-top: 1em;
+        color: #FFF;
+    }
+    .formButton:hover {
+        background-color: #9ca6dc;
+    }
+}
