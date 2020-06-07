@@ -1,0 +1,15 @@
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DB4C3F;
+    font-size: 1.5rem;
+    font-family: 'Metal Mania', cursive;
+
+    a {
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+}
