@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+
+import './App.scss';
+import Header from './components/header/Header';
+import SideBar from './components/sidebar/Sidebar';
+import Tasks from './pages/tasks/Task';
+import Today from './pages/today/Today';
+import ErrorComponent from './components/errorComponent/ErrorComponent';
+
+const items = [
+  { name: 'tasks', label: 'Tasks', path: '/tasks' },
+  { name: 'today', label: 'Today', path: '/today' }
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className='main'>
+        <SideBar items={items} />
+        <Switch>
+          <Route path='/tasks' exact component={Tasks} />
+          <Route exact path='/today' component={Today} />
+
+          <Route component={ErrorComponent} />
+        </Switch>
+      </div>
     </div>
   );
 }
